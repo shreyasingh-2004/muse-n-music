@@ -1,9 +1,9 @@
 // client/src/components/Collaboration/CollaborationRoom.tsx
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Users, MessageSquare, Send, Mic, Headphones } from 'lucide-react';
 import { useSocket } from '../../hooks/useSocket';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 
 interface CollaborationRoomProps {
   roomId: string;

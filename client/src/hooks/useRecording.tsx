@@ -43,15 +43,15 @@ export const useRecording = () => {
   };
 
   // Get note from keyCode
-  const getNoteFromKeyCode = (keyCode: string): string | null => {
-    const keyMap: { [key: string]: string } = {
-      'KeyA': 'C4', 'KeyW': 'C#4', 'KeyS': 'D4', 'KeyE': 'D#4',
-      'KeyD': 'E4', 'KeyF': 'F4', 'KeyT': 'F#4', 'KeyG': 'G4',
-      'KeyY': 'G#4', 'KeyH': 'A4', 'KeyU': 'A#4', 'KeyJ': 'B4',
-      'KeyK': 'C5'
-    };
-    return keyMap[keyCode] || null;
-  };
+  // const getNoteFromKeyCode = (keyCode: string): string | null => {
+  //   const keyMap: { [key: string]: string } = {
+  //     'KeyA': 'C4', 'KeyW': 'C#4', 'KeyS': 'D4', 'KeyE': 'D#4',
+  //     'KeyD': 'E4', 'KeyF': 'F4', 'KeyT': 'F#4', 'KeyG': 'G4',
+  //     'KeyY': 'G#4', 'KeyH': 'A4', 'KeyU': 'A#4', 'KeyJ': 'B4',
+  //     'KeyK': 'C5'
+  //   };
+  //   return keyMap[keyCode] || null;
+  // };
 
   // Start recording
   const startRecording = useCallback(() => {
