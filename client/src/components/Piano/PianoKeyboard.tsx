@@ -1,12 +1,7 @@
 // client/src/components/Piano/RealisticPiano.tsx
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-    Volume2, Music, Mic, Save, Play, Download, Trash2,
-    Waves, Zap, Heart, Share2, Maximize2, SkipBack,
-    SkipForward, Sparkles, Activity, Radio, Moon, Sun,
-    Settings, Info
-} from 'lucide-react';
+import {Volume2, Mic, Play, Download, Maximize2,  Moon, Sun, Info} from 'lucide-react';
 
 // Professional piano key configuration
 const WHITE_KEYS = [
