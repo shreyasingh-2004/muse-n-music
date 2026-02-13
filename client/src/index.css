@@ -1,0 +1,95 @@
+/* client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .premium-button {
+    @apply relative overflow-hidden transition-all duration-300 
+           hover:scale-105 active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed
+           before:absolute before:inset-0 before:bg-gradient-to-r 
+           before:from-transparent before:via-white/20 before:to-transparent
+           before:-translate-x-full hover:before:translate-x-full
+           before:transition-transform before:duration-700;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-500 to-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-blue-600 to-purple-700;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-purple-500/30 text-white;
+}
+
+/* Focus outline */
+*:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  @apply ring-2 ring-purple-500 ring-opacity-50;
+}
