@@ -1,5 +1,5 @@
 // client/src/components/UI/Toast.tsx
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, Info, X } from 'lucide-react';
 import { useEffect } from 'react';
 
