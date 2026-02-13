@@ -1,7 +1,7 @@
 // client/src/components/Piano/RealisticPiano.tsx
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {Volume2, Mic, Play, Download, Maximize2,  Moon, Sun, Info} from 'lucide-react';
+import { Volume2, Mic, Play, Download, Maximize2, Moon, Sun, Info } from 'lucide-react';
 
 // Professional piano key configuration
 const WHITE_KEYS = [
@@ -31,7 +31,7 @@ export default function PianoKeyboard() {
     const [isRecording, setIsRecording] = useState(false);
     const [recordedNotes, setRecordedNotes] = useState<any[]>([]);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isFullscreen, setIsFullscreen] = useState(false);
+    // const [isFullscreen, setIsFullscreen] = useState(false);
     const [showShortcuts, setShowShortcuts] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(true);
     const audioContextRef = useRef<AudioContext | null>(null);
@@ -166,18 +166,18 @@ export default function PianoKeyboard() {
 
     // Toggle fullscreen
     const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-};
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    };
 
 
     return (
         <div className={`min-h-screen transition-colors duration-500 ${isDarkMode
-                ? 'bg-gradient-to-br from-slate-950 via-purple-950/90 to-slate-950'
-                : 'bg-gradient-to-br from-slate-100 via-white to-slate-200'
+            ? 'bg-gradient-to-br from-slate-950 via-purple-950/90 to-slate-950'
+            : 'bg-gradient-to-br from-slate-100 via-white to-slate-200'
             }`}>
 
             {/* Main Container */}
@@ -212,8 +212,8 @@ export default function PianoKeyboard() {
                         animate={{ opacity: 1, x: 0 }}
                         onClick={() => setIsDarkMode(!isDarkMode)}
                         className={`p-3 rounded-xl transition-all ${isDarkMode
-                                ? 'bg-white/10 text-yellow-400 hover:bg-white/20'
-                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            ? 'bg-white/10 text-yellow-400 hover:bg-white/20'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                             }`}
                     >
                         {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -225,8 +225,8 @@ export default function PianoKeyboard() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className={`mb-8 p-6 rounded-2xl ${isDarkMode
-                            ? 'bg-black/25 backdrop-blur-xl border border-white/10 shadow-xl'
-                            : 'bg-white/80 backdrop-blur-xl border border-gray-300 shadow-xl'
+                        ? 'bg-black/25 backdrop-blur-xl border border-white/10 shadow-xl'
+                        : 'bg-white/80 backdrop-blur-xl border border-gray-300 shadow-xl'
                         }`}
                 >
                     <div className="flex flex-wrap items-center justify-between gap-4">
@@ -237,10 +237,10 @@ export default function PianoKeyboard() {
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setIsRecording(!isRecording)}
                                 className={`px-6 py-3 rounded-xl font-semibold flex items-center gap-3 transition-all ${isRecording
-                                        ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30'
-                                        : isDarkMode
-                                            ? 'bg-white/10 text-white hover:bg-white/20'
-                                            : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                                    ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30'
+                                    : isDarkMode
+                                        ? 'bg-white/10 text-white hover:bg-white/20'
+                                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                                     }`}
                             >
                                 <Mic size={20} />
@@ -261,8 +261,8 @@ export default function PianoKeyboard() {
                                         whileTap={{ scale: 0.95 }}
                                         onClick={() => setIsPlaying(!isPlaying)}
                                         className={`p-3 rounded-xl ${isDarkMode
-                                                ? 'bg-green-600/90 text-white hover:bg-green-700'
-                                                : 'bg-green-600 text-white hover:bg-green-700'
+                                            ? 'bg-green-600/90 text-white hover:bg-green-700'
+                                            : 'bg-green-600 text-white hover:bg-green-700'
                                             }`}
                                     >
                                         <Play size={20} />
@@ -271,8 +271,8 @@ export default function PianoKeyboard() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className={`p-3 rounded-xl ${isDarkMode
-                                                ? 'bg-white/10 text-white hover:bg-white/20'
-                                                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                                            ? 'bg-white/10 text-white hover:bg-white/20'
+                                            : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                                             }`}
                                     >
                                         <Download size={20} />
@@ -353,8 +353,8 @@ export default function PianoKeyboard() {
                                 whileTap={{ scale: 0.9 }}
                                 onClick={toggleFullscreen}
                                 className={`p-3 rounded-xl ${isDarkMode
-                                        ? 'bg-white/10 text-white hover:bg-white/20'
-                                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                                    ? 'bg-white/10 text-white hover:bg-white/20'
+                                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                                     }`}
                             >
                                 <Maximize2 size={18} />
@@ -364,8 +364,8 @@ export default function PianoKeyboard() {
                                 whileTap={{ scale: 0.9 }}
                                 onClick={() => setShowShortcuts(!showShortcuts)}
                                 className={`p-3 rounded-xl ${isDarkMode
-                                        ? 'bg-white/10 text-white hover:bg-white/20'
-                                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                                    ? 'bg-white/10 text-white hover:bg-white/20'
+                                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                                     }`}
                             >
                                 <Info size={18} />
@@ -381,8 +381,8 @@ export default function PianoKeyboard() {
                     className="flex justify-center mb-8"
                 >
                     <div className={`px-8 py-4 rounded-2xl ${isDarkMode
-                            ? 'bg-gradient-to-r from-amber-500/10 to-yellow-600/10 backdrop-blur-xl border border-amber-500/30'
-                            : 'bg-gradient-to-r from-amber-500 to-yellow-600 shadow-xl'
+                        ? 'bg-gradient-to-r from-amber-500/10 to-yellow-600/10 backdrop-blur-xl border border-amber-500/30'
+                        : 'bg-gradient-to-r from-amber-500 to-yellow-600 shadow-xl'
                         }`}>
                         <p className={`text-sm ${isDarkMode ? 'text-amber-300' : 'text-white/90'}`}>Currently Playing</p>
                         <div className="flex items-center gap-4">
@@ -590,8 +590,8 @@ export default function PianoKeyboard() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}
                             className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 ${isDarkMode
-                                    ? 'bg-gray-900/95 backdrop-blur-xl border border-white/20'
-                                    : 'bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl'
+                                ? 'bg-gray-900/95 backdrop-blur-xl border border-white/20'
+                                : 'bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl'
                                 } rounded-2xl p-6 shadow-2xl`}
                             style={{ width: '600px', maxWidth: '90vw' }}
                         >
@@ -642,8 +642,8 @@ export default function PianoKeyboard() {
                                             <div
                                                 key={key.code}
                                                 className={`flex flex-col items-center p-2 rounded-lg ${isDarkMode
-                                                        ? 'bg-gradient-to-b from-gray-800 to-gray-900'
-                                                        : 'bg-gradient-to-b from-gray-700 to-gray-800'
+                                                    ? 'bg-gradient-to-b from-gray-800 to-gray-900'
+                                                    : 'bg-gradient-to-b from-gray-700 to-gray-800'
                                                     }`}
                                             >
                                                 <span className="text-lg font-bold text-white">
