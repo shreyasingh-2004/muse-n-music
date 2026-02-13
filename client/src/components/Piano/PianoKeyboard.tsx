@@ -166,14 +166,13 @@ export default function PianoKeyboard() {
 
     // Toggle fullscreen
     const toggleFullscreen = () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-            setIsFullscreen(true);
-        } else {
-            document.exitFullscreen();
-            setIsFullscreen(false);
-        }
-    };
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+};
+
 
     return (
         <div className={`min-h-screen transition-colors duration-500 ${isDarkMode
